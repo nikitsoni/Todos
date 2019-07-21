@@ -12,8 +12,12 @@ $('ul').on('click', 'span', function(event){
 $('input[type = text]').keypress(function(event){
     if(event.which === 13){
         var todoText = $(this).val();
-        $(this).val("");
-        $('ul').append('<li><span><i class="fa fa-trash" aria-hidden="true"></i></span> '+ todoText +'</li>')
+        if(todoText === ''){
+            alert('Please Enter a Value!')
+        }else{
+            $(this).val("");
+            $('ul').append('<li><span><i class="fa fa-trash" aria-hidden="true"></i></span> '+ todoText +'</li>')
+        }
     };
 });
 
